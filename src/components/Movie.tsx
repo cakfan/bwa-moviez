@@ -21,7 +21,9 @@ const Card = ({ title, genre, ratings, poster }: (typeof movies)[0]) => {
     <div className="flex gap-5 items-center">
       <div className="relative w-[100px] h-[127px] rounded-2xl overflow-hidden">
         <Image
-          src={poster}
+          src={`${
+            process.env.NODE_ENV === "production" && "/bwa-moviez"
+          }${poster}`}
           alt={`${title} poster`}
           fill
           className="object-cover"
