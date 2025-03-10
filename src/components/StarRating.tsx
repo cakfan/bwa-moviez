@@ -1,12 +1,18 @@
-import { Icons } from "./Icon";
+import Image from "next/image";
 
 export const StarRating = ({ count }: { count: number }) => {
   return (
     <div className="flex">
       {Array.from({ length: 5 }).map((_, index) => (
-        <Icons.star
+        <Image
           key={index}
-          fillColor={index < count ? "#FFAB2E" : "#E1E1EA"}
+          width={18}
+          height={18}
+          src={`${
+            process.env.NODE_ENV === "production" ? "/bwa-moviez" : ""
+          }/icons/${index < count ? "star-filled" : "star-empty"}.svg`}
+          alt="star"
+          className="w-4 h-4"
         />
       ))}
     </div>

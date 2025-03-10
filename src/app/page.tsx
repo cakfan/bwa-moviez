@@ -4,7 +4,7 @@ import { Movie } from "@/components/Movie";
 
 export default function Home() {
   return (
-    <div className="w-full relative">
+    <div className="w-full h-full relative">
       <Header />
       <Featured />
       <h3 className="text-[24px] font-black mx-6 mt-[30px]">From Disney</h3>

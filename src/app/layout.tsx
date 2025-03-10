@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark bg-[#DAE1E9]">
       <body
-        className={`${latoSans.className} antialiased h-screen max-w-[640px] mx-auto`}
+        className={`${latoSans.className} antialiased min-h-screen max-w-[640px] mx-auto`}
       >
         {children}
       </body>
