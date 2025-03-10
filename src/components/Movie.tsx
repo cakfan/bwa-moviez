@@ -9,7 +9,7 @@ const movies = [
     poster: "/poster/3.png",
   },
   {
-    title: "Beuty & Beast",
+    title: "Beauty & Beast",
     genre: "Sci-Fiction",
     ratings: 5,
     poster: "/poster/2.png",
@@ -18,15 +18,14 @@ const movies = [
 
 const Card = ({ title, genre, ratings, poster }: (typeof movies)[0]) => {
   return (
-    <div className="flex flex-wrap gap-5 items-center">
-      <div className="relative w-[100px] h-[127px] rounded-2xl overflow-hidden">
+    <div className="flex gap-5 items-center">
+      {/* Fixed-size container to prevent shrinking */}
+      <div className="relative w-[100px] h-[127px] min-w-[100px] min-h-[127px] rounded-2xl overflow-hidden">
         <Image
-          src={`${
-            process.env.NODE_ENV === "production" ? "/bwa-moviez" : ""
-          }${poster}`}
+          src={poster}
           alt={`${title} poster`}
           fill
-          className="object-cover"
+          className="object-cover object-center"
         />
       </div>
       <div className="flex flex-col gap-1">
