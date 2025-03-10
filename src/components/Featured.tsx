@@ -40,7 +40,9 @@ const Card = ({
           <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-1/2 w-[244px] h-[23px] bg-[#5E38E5]/40 blur-lg rounded-full" />
           <div className="relative w-full h-full overflow-hidden rounded-2xl">
             <Image
-              src={poster}
+              src={`${
+                process.env.NODE_ENV === "production" ? "/bwa-moviez" : ""
+              }${poster}`}
               alt={`${title} poster`}
               fill
               className="object-cover"
