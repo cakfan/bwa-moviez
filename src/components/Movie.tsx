@@ -22,7 +22,9 @@ const Card = ({ title, genre, ratings, poster }: (typeof movies)[0]) => {
       {/* Fixed-size container to prevent shrinking */}
       <div className="relative w-[100px] h-[127px] min-w-[100px] min-h-[127px] rounded-2xl overflow-hidden">
         <Image
-          src={poster}
+          src={`${
+            process.env.NODE_ENV === "production" ? "/bwa-moviez" : ""
+          }${poster}`}
           alt={`${title} poster`}
           fill
           className="object-cover object-center"
