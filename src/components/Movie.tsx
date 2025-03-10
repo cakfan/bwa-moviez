@@ -22,7 +22,7 @@ const Card = ({ title, genre, ratings, poster }: (typeof movies)[0]) => {
       <div className="relative w-[100px] h-[127px] rounded-2xl overflow-hidden">
         <Image
           src={`${
-            process.env.NODE_ENV === "production" && "/bwa-moviez"
+            process.env.NODE_ENV === "production" ? "/bwa-moviez" : ""
           }${poster}`}
           alt={`${title} poster`}
           fill
@@ -40,7 +40,7 @@ const Card = ({ title, genre, ratings, poster }: (typeof movies)[0]) => {
 
 export const Movie = () => {
   return (
-    <div className="relative px-6 mt-5 mb-11">
+    <div className="relative px-6 mt-5 pb-11">
       <div className="flex flex-col gap-[30px]">
         {movies.map((movie, index) => (
           <Card key={index} {...movie} />

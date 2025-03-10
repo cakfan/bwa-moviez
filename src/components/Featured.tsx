@@ -36,7 +36,7 @@ const Card = ({
           <div className="relative w-full h-full overflow-hidden rounded-2xl">
             <Image
               src={`${
-                process.env.NODE_ENV === "production" && "/bwa-moviez"
+                process.env.NODE_ENV === "production" ? "/bwa-moviez" : ""
               }${poster}`}
               alt={`${title} poster`}
               fill
