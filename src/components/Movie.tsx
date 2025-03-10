@@ -18,7 +18,7 @@ const movies = [
 
 const Card = ({ title, genre, ratings, poster }: (typeof movies)[0]) => {
   return (
-    <div className="flex gap-5 items-center">
+    <div className="flex flex-wrap gap-5 items-center">
       <div className="relative w-[100px] h-[127px] rounded-2xl overflow-hidden">
         <Image
           src={`${

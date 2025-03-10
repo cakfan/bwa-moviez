@@ -1,5 +1,10 @@
+"use client";
+
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { StarRating } from "./StarRating";
+
+import "swiper/css";
 
 const featuredMovies = [
   {
@@ -15,7 +20,7 @@ const featuredMovies = [
     poster: "/poster/3.png",
   },
   {
-    title: "Beuty & Beast",
+    title: "Beauty & Beast",
     genre: "Sci-Fiction",
     ratings: 5,
     poster: "/poster/2.png",
@@ -29,15 +34,13 @@ const Card = ({
   poster,
 }: (typeof featuredMovies)[0]) => {
   return (
-    <div className="shrink-0 relative">
-      <div className="flex flex-col gap-4 rounded-lg w-[300px] h-[279px] shadow-md">
+    <div className="shrink-0 relative w-[300px] h-[279px]">
+      <div className="flex flex-col gap-4 rounded-lg shadow-md">
         <div className="relative w-full h-[200px]">
           <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-1/2 w-[244px] h-[23px] bg-[#5E38E5]/40 blur-lg rounded-full" />
           <div className="relative w-full h-full overflow-hidden rounded-2xl">
             <Image
-              src={`${
-                process.env.NODE_ENV === "production" ? "/bwa-moviez" : ""
-              }${poster}`}
+              src={poster}
               alt={`${title} poster`}
               fill
               className="object-cover"
@@ -58,12 +61,14 @@ const Card = ({
 
 export const Featured = () => {
   return (
-    <div className="relative overflow-x-auto scrollbar-hide w-full">
-      <div className="flex gap-6 flex-nowrap scroll-smooth pl-6 mr-6">
+    <div className="relative w-full">
+      <Swiper spaceBetween={24} slidesPerView="auto" className="!pl-6 !pr-6">
         {featuredMovies.map((movie, index) => (
-          <Card key={index} {...movie} />
+          <SwiperSlide key={index} className="!w-[300px]">
+            <Card {...movie} />
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
     </div>
   );
 };
