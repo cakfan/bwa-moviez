@@ -14,12 +14,17 @@ const movies = [
     ratings: 5,
     poster: "/poster/2.png",
   },
+  {
+    title: "John Wick 4",
+    genre: "Action, Crime",
+    ratings: 5,
+    poster: "/poster/1.png",
+  },
 ];
 
 const Card = ({ title, genre, ratings, poster }: (typeof movies)[0]) => {
   return (
     <div className="flex gap-5 items-center">
-      {/* Fixed-size container to prevent shrinking */}
       <div className="relative w-[100px] h-[127px] min-w-[100px] min-h-[127px] rounded-2xl overflow-hidden">
         <Image
           src={`${
