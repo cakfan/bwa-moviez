@@ -36,7 +36,7 @@ const Card = ({
 }: (typeof featuredMovies)[0]) => {
   return (
     <Link href={"#"} className="shrink-0 relative w-[300px] h-[279px]">
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-[19px]">
         <div className="relative w-full h-[200px]">
           <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-1/2 w-[244px] h-[23px] bg-[#5E38E5]/40 blur-lg rounded-full" />
           <div className="relative w-full h-full overflow-hidden rounded-[21px]">
