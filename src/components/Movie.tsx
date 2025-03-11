@@ -15,12 +15,6 @@ const movies = [
     ratings: 5,
     poster: "/poster/2.png",
   },
-  {
-    title: "John Wick 4",
-    genre: "Action, Crime",
-    ratings: 5,
-    poster: "/poster/1.png",
-  },
 ];
 
 const Card = ({ title, genre, ratings, poster }: (typeof movies)[0]) => {

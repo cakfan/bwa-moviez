@@ -15,16 +15,10 @@ const featuredMovies = [
     poster: "/poster/1.png",
   },
   {
-    title: "Mulan Session",
-    genre: "History, War",
+    title: "Bohemian",
+    genre: "Documentary",
     ratings: 3,
-    poster: "/poster/3.png",
-  },
-  {
-    title: "Beauty & Beast",
-    genre: "Sci-Fiction",
-    ratings: 5,
-    poster: "/poster/2.png",
+    poster: "/poster/4.png",
   },
 ];
 
@@ -50,7 +44,7 @@ const Card = ({
             />
           </div>
         </div>
-        <div className="flex justify-between items-center px-2">
+        <div className="flex justify-between items-center">
           <div className="flex flex-col gap-[4px]">
             <h2 className="text-[20px] line-clamp-1 leading-[27px] font-semibold">
               {title}
