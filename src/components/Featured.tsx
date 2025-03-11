@@ -13,12 +13,14 @@ const featuredMovies = [
     genre: "Action, Crime",
     ratings: 5,
     poster: "/poster/1.png",
+    blur: "bg-[#5E38E5]/40",
   },
   {
     title: "Bohemian",
     genre: "Documentary",
     ratings: 3,
     poster: "/poster/4.png",
+    blur: "bg-[#FE7B02]/40",
   },
 ];
 
@@ -27,12 +29,15 @@ const Card = ({
   genre,
   ratings,
   poster,
+  blur,
 }: (typeof featuredMovies)[0]) => {
   return (
     <Link href={"#"} className="shrink-0 relative w-[300px] h-[279px]">
       <div className="flex flex-col gap-[19px]">
         <div className="relative w-full h-[200px]">
-          <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-1/2 w-[244px] h-[23px] bg-[#5E38E5]/40 blur-[40px] rounded-full" />
+          <div
+            className={`absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-1/2 w-[244px] h-[23px] ${blur} blur-[40px] rounded-full`}
+          />
           <div className="relative w-full h-full overflow-hidden rounded-[21px]">
             <Image
               src={`${
