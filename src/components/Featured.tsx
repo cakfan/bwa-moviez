@@ -52,7 +52,7 @@ const Card = ({
         </div>
         <div className="flex justify-between items-center px-2">
           <div className="flex flex-col gap-[4px]">
-            <h2 className="text-[20px] leading-[27px] font-semibold">
+            <h2 className="text-[20px] line-clamp-1 leading-[27px] font-semibold">
               {title}
             </h2>
             <span className="text-[16px] leading-[22px] text-accent">

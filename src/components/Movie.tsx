@@ -40,7 +40,7 @@ const Card = ({ title, genre, ratings, poster }: (typeof movies)[0]) => {
         </div>
       </div>
       <div className="flex flex-col gap-1">
-        <h2 className="text-[20px] font-semibold">{title}</h2>
+        <h2 className="text-[20px] line-clamp-1 font-semibold">{title}</h2>
         <span className="text-[16px] text-accent mb-4">{genre}</span>
         <StarRating count={ratings} />
       </div>
