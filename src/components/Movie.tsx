@@ -21,7 +21,7 @@ const Card = ({ title, genre, ratings, poster }: (typeof movies)[0]) => {
   return (
     <Link href={"#"} className="flex gap-5 items-center">
       <div className="relative w-[100px] h-[127px]">
-        <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-1/2 w-[82px] h-[16px] bg-[#169E9F]/40 blur-[40px] rounded-full" />
+        <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-1/2 w-[82px] h-[16px] bg-[#169E9F]/40 blur-[30px] rounded-full" />
         <div className="relative min-w-[100px] min-h-[127px] rounded-[21px] overflow-hidden">
           <Image
             src={`${

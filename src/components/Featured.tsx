@@ -36,7 +36,7 @@ const Card = ({
       <div className="flex flex-col gap-[19px]">
         <div className="relative w-full h-[200px]">
           <div
-            className={`absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-1/2 w-[244px] h-[23px] ${blur} blur-[40px] rounded-full`}
+            className={`absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-1/2 w-[244px] h-[23px] ${blur} blur-[30px] rounded-full`}
           />
           <div className="relative w-full h-full overflow-hidden rounded-[21px]">
             <Image
