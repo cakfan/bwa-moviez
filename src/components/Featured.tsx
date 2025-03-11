@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { StarRating } from "./StarRating";
 
 import "swiper/css";
+import Link from "next/link";
 
 const featuredMovies = [
   {
@@ -34,11 +35,11 @@ const Card = ({
   poster,
 }: (typeof featuredMovies)[0]) => {
   return (
-    <div className="shrink-0 relative w-[300px] h-[279px]">
-      <div className="flex flex-col gap-4 rounded-lg">
+    <Link href={"#"} className="shrink-0 relative w-[300px] h-[279px]">
+      <div className="flex flex-col gap-4">
         <div className="relative w-full h-[200px]">
           <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-1/2 w-[244px] h-[23px] bg-[#5E38E5]/40 blur-lg rounded-full" />
-          <div className="relative w-full h-full overflow-hidden rounded-2xl">
+          <div className="relative w-full h-full overflow-hidden rounded-[21px]">
             <Image
               src={`${
                 process.env.NODE_ENV === "production" ? "/bwa-moviez" : ""
@@ -50,14 +51,18 @@ const Card = ({
           </div>
         </div>
         <div className="flex justify-between items-center px-2">
-          <div className="flex flex-col">
-            <h2 className="text-lg font-semibold">{title}</h2>
-            <span className="text-sm text-gray-500">{genre}</span>
+          <div className="flex flex-col gap-[4px]">
+            <h2 className="text-[20px] leading-[27px] font-semibold">
+              {title}
+            </h2>
+            <span className="text-[16px] leading-[22px] text-accent">
+              {genre}
+            </span>
           </div>
           <StarRating count={ratings} />
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { StarRating } from "./StarRating";
+import Link from "next/link";
 
 const movies = [
   {
@@ -24,23 +25,26 @@ const movies = [
 
 const Card = ({ title, genre, ratings, poster }: (typeof movies)[0]) => {
   return (
-    <div className="flex gap-5 items-center">
-      <div className="relative w-[100px] h-[127px] min-w-[100px] min-h-[127px] rounded-2xl overflow-hidden">
-        <Image
-          src={`${
-            process.env.NODE_ENV === "production" ? "/bwa-moviez" : ""
-          }${poster}`}
-          alt={`${title} poster`}
-          fill
-          className="object-cover object-center"
-        />
+    <Link href={"#"} className="flex gap-5 items-center">
+      <div className="relative w-[100px] h-[127px]">
+        <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-1/2 w-[82px] h-[16px] bg-[#169E9F]/40 blur-lg rounded-full" />
+        <div className="relative min-w-[100px] min-h-[127px] rounded-[21px] overflow-hidden">
+          <Image
+            src={`${
+              process.env.NODE_ENV === "production" ? "/bwa-moviez" : ""
+            }${poster}`}
+            alt={`${title} poster`}
+            fill
+            className="object-cover object-center"
+          />
+        </div>
       </div>
       <div className="flex flex-col gap-1">
         <h2 className="text-[20px] font-semibold">{title}</h2>
         <span className="text-[16px] text-accent mb-4">{genre}</span>
         <StarRating count={ratings} />
       </div>
-    </div>
+    </Link>
   );
 };
 

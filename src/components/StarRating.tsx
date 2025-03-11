@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const StarRating = ({ count }: { count: number }) => {
   return (
-    <div className="flex">
+    <div className="flex h-[18px] gap-[2px]">
       {Array.from({ length: 5 }).map((_, index) => (
         <Image
           key={index}

@@ -7,7 +7,9 @@ export default function Home() {
     <div className="w-full h-full relative">
       <Header />
       <Featured />
-      <h3 className="text-[24px] font-black mx-6 mt-[30px]">From Disney</h3>
+      <h3 className="text-[24px] font-bold leading-[33px] mx-6 mt-[30px]">
+        From Disney
+      </h3>
       <Movie />
     </div>
   );
